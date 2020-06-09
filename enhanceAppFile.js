@@ -1,4 +1,4 @@
-export default ({ Vue }) => {
+export default ({ Vue, isServer }) => {
   const options = JSON.parse(DISQUS_OPTIONS);
 
   const name = options.name || "Disqus"
@@ -32,4 +32,34 @@ export default ({ Vue }) => {
       }
     }
   });
+
+  if (!isServer) {
+    window.$ = window.jQuery = require('jquery');
+
+    $('html').on('click', 'a', function() {
+      setTimeout(() => {
+        resetComments();
+      }, 100);
+    });
+
+    function resetComments() {
+      if (window.DISQUS) {
+        const location = window.location;
+        let identifier = location.pathname;
+        let url = document.baseURI;
+
+        if (location.hash) {
+          identifier = url = location.origin + '/#!' + location.pathname + location.hash;
+        }
+
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = identifier;
+            this.page.url = url;
+          }
+        });
+      }
+    }
+  }
 };

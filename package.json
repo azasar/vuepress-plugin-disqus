@@ -1,7 +1,7 @@
 {
-  "name": "vuepress-plugin-disqus",
-  "version": "0.2.0",
-  "description": "Register a global Disqus component to add to your layouts",
+  "name": "vuepress-plugin-disqus-spa",
+  "version": "0.1.0",
+  "description": "Register a global Disqus component to add to your layouts for SPA apps",
   "main": "index.js",
   "keywords": [
     "vuepress",
@@ -10,15 +10,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lorisleiva/vuepress-plugin-disqus.git"
+    "url": "git+https://github.com/azasar/vuepress-plugin-disqus.git"
   },
-  "author": "Loris Leiva",
+  "author": "Azamat Sarsenbayev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lorisleiva/vuepress-plugin-disqus/issues"
+    "url": "https://github.com/azasar/vuepress-plugin-disqus/issues"
   },
-  "homepage": "https://github.com/lorisleiva/vuepress-plugin-disqus#readme",
+  "homepage": "https://github.com/azasar/vuepress-plugin-disqus#readme",
   "dependencies": {
-    "vue-disqus": "^3.0.5"
+    "vue-disqus-spa": "^0.1.0",
+    "jquery": "^3.5.1"
   }
 }
