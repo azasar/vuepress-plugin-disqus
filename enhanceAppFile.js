@@ -2,7 +2,7 @@ export default ({ Vue, isServer }) => {
   const options = JSON.parse(DISQUS_OPTIONS);
 
   const name = options.name || "Disqus"
-  const component = () => import('vue-disqus/src/vue-disqus.vue')
+  const component = () => import('vue-disqus-spa/src/Disqus.vue')
 
   // options will be pass down as props to the components later
   delete options.name

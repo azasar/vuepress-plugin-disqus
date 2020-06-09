@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = (options) => ({
-  name: "disqus",
+  name: "disqus-spa",
 
   enhanceAppFiles: [path.resolve(__dirname, "enhanceAppFile.js")],
 
